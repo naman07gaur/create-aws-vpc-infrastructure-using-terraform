@@ -30,25 +30,25 @@ The primary objective of this project is to set up a highly available and scalab
 
 # Subnets:
 
-Two subnets are provisioned within the VPC, each located in different availability zones (ap-south-1a and ap-south-1b) to ensure high availability.
+* Two subnets are provisioned within the VPC, each located in different availability zones (ap-south-1a and ap-south-1b) to ensure high availability.
 
 # Internet Gateway and Route Table:
 
-An Internet Gateway is attached to the VPC to allow internet access.
-A route table is created and associated with the subnets, directing internet-bound traffic through the Internet Gateway.
+* An Internet Gateway is attached to the VPC to allow internet access.
+* A route table is created and associated with the subnets, directing internet-bound traffic through the Internet Gateway.
 
 # Security Group:
 
-A security group is configured to allow HTTP (port 80) and SSH (port 22) traffic from any IP address, ensuring web and administrative access.
+* A security group is configured to allow HTTP (port 80) and SSH (port 22) traffic from any IP address, ensuring web and administrative access.
 
 # S3 Bucket:
 
-An S3 bucket is created to store files, potentially for hosting static content or backups.
+* An S3 bucket is created to store files, potentially for hosting static content or backups.
 
 # EC2 Instances:
 
-Two EC2 instances are launched in the subnets using a specified Amazon Machine Image (AMI).
-User data scripts are executed on these instances at launch to set up the web servers.
+* Two EC2 instances are launched in the subnets using a specified Amazon Machine Image (AMI).
+* User data scripts are executed on these instances at launch to set up the web servers.
 
 # Application Load Balancer (ALB):
 
@@ -57,9 +57,9 @@ The ALB spans both subnets to ensure availability even if one availability zone 
 
 # Target Group and Listener:
 
-A target group is created for the ALB with health checks to monitor the web servers' status.
-The ALB listener forwards incoming traffic to the target group, ensuring load balancing.
+* A target group is created for the ALB with health checks to monitor the web servers' status.
+* The ALB listener forwards incoming traffic to the target group, ensuring load balancing.
 
 # Outputs:
 
-The DNS name of the ALB is outputted, providing a single point of access to the web servers.
+* The DNS name of the ALB is outputted, providing a single point of access to the web servers.
