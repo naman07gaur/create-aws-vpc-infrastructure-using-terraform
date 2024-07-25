@@ -11,16 +11,16 @@ The primary objective of this project is to set up a highly available and scalab
 ### This Terraform script provisions the following resources in AWS:
 
 1. **VPC** with a specified CIDR block.
-2. Two Subnets within the VPC, each in different availability zones.
-3. Internet Gateway attached to the VPC.
-4. Route Table associated with the subnets, routing traffic through the Internet Gateway.
-5. Security Group allowing HTTP and SSH traffic.
-6. S3 Bucket for storing files.
-7. Two EC2 Instances within the subnets, using a specified AMI, with user data scripts.
-8. Application Load Balancer (ALB) spanning both subnets.
-9. Target Group for the ALB, with health checks.
-10. ALB Listener for forwarding traffic to the target group.
-11. Output for the DNS name of the load balancer.
+2. **Two Subnets** within the VPC, each in different availability zones.
+3. **Internet Gateway** attached to the VPC.
+4. **Route Table** associated with the subnets, routing traffic through the Internet Gateway.
+5. **Security Group** allowing HTTP and SSH traffic.
+6. **S3 Bucket** for storing files.
+7. Two **EC2 Instances** within the subnets, using a specified AMI, with user data scripts.
+8. **Application Load Balancer** (ALB) spanning both subnets.
+9. **Target Group** for the ALB, with health checks.
+10. **ALB Listener** for forwarding traffic to the target group.
+11. **Output** for the DNS name of the load balancer.
 
 # Components:
 
