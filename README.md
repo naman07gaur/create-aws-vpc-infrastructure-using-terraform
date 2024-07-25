@@ -8,7 +8,7 @@ The primary objective of this project is to set up a highly available and scalab
 ![how-it-works](https://github.com/user-attachments/assets/59602158-0baf-4ccb-a401-3342ab73ddaa)
 
 
-### This Terraform script(main.tf) provisions the following resources in AWS:
+### This Terraform script (main.tf) provisions the following resources in AWS:
 
 1. **VPC** with a specified CIDR block.
 2. **Two Subnets** within the VPC, each in different availability zones.
