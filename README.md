@@ -37,7 +37,7 @@ The primary objective of this project is to set up a highly available and scalab
 * An Internet Gateway is attached to the VPC to allow internet access.
 * A route table is created and associated with the subnets, directing internet-bound traffic through the Internet Gateway.
 
-# Security Group:
+## Security Group:
 
 * A security group is configured to allow HTTP (port 80) and SSH (port 22) traffic from any IP address, ensuring web and administrative access.
 
@@ -55,7 +55,7 @@ The primary objective of this project is to set up a highly available and scalab
 An ALB is set up to distribute incoming HTTP traffic across the two EC2 instances.
 The ALB spans both subnets to ensure availability even if one availability zone fails.
 
-# Target Group and Listener:
+## Target Group and Listener:
 
 * A target group is created for the ALB with health checks to monitor the web servers' status.
 * The ALB listener forwards incoming traffic to the target group, ensuring load balancing.
@@ -63,3 +63,8 @@ The ALB spans both subnets to ensure availability even if one availability zone 
 ## Outputs:
 
 * The DNS name of the ALB is outputted, providing a single point of access to the web servers.
+
+
+# Result
+
+Each EC2 instance is configured with a user data script(userdata.sh & userdata1.sh) that sets up the web server.when we click on the DNS Endpoint from the ALB it will show basic HTML page which is written in user data script.On refreshing the page again and again we can see the load distributed to diffrent instances in the  target group by the ALB.
