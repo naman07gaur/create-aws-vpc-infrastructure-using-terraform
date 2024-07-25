@@ -22,17 +22,17 @@ The primary objective of this project is to set up a highly available and scalab
 10. ALB Listener for forwarding traffic to the target group.
 11. Output for the DNS name of the load balancer.
 
-## Components:
+# Components:
 
-# VPC (Virtual Private Cloud):
+## VPC (Virtual Private Cloud):
 
 * A VPC is created with a specified CIDR block to provide an isolated network for resources.
 
-# Subnets:
+## Subnets:
 
 * Two subnets are provisioned within the VPC, each located in different availability zones (ap-south-1a and ap-south-1b) to ensure high availability.
 
-# Internet Gateway and Route Table:
+## Internet Gateway and Route Table:
 
 * An Internet Gateway is attached to the VPC to allow internet access.
 * A route table is created and associated with the subnets, directing internet-bound traffic through the Internet Gateway.
@@ -41,16 +41,16 @@ The primary objective of this project is to set up a highly available and scalab
 
 * A security group is configured to allow HTTP (port 80) and SSH (port 22) traffic from any IP address, ensuring web and administrative access.
 
-# S3 Bucket:
+## S3 Bucket:
 
 * An S3 bucket is created to store files, potentially for hosting static content or backups.
 
-# EC2 Instances:
+## EC2 Instances:
 
 * Two EC2 instances are launched in the subnets using a specified Amazon Machine Image (AMI).
 * User data scripts are executed on these instances at launch to set up the web servers.
 
-# Application Load Balancer (ALB):
+## Application Load Balancer (ALB):
 
 An ALB is set up to distribute incoming HTTP traffic across the two EC2 instances.
 The ALB spans both subnets to ensure availability even if one availability zone fails.
@@ -60,6 +60,6 @@ The ALB spans both subnets to ensure availability even if one availability zone 
 * A target group is created for the ALB with health checks to monitor the web servers' status.
 * The ALB listener forwards incoming traffic to the target group, ensuring load balancing.
 
-# Outputs:
+## Outputs:
 
 * The DNS name of the ALB is outputted, providing a single point of access to the web servers.
