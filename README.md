@@ -10,7 +10,7 @@ The primary objective of this project is to set up a highly available and scalab
 
 ### This Terraform script provisions the following resources in AWS:
 
-1. VPC with a specified CIDR block.
+1. **VPC** with a specified CIDR block.
 2. Two Subnets within the VPC, each in different availability zones.
 3. Internet Gateway attached to the VPC.
 4. Route Table associated with the subnets, routing traffic through the Internet Gateway.
